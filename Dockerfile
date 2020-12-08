@@ -6,9 +6,14 @@ LABEL maintainer="Mahmoud Zalt <mahmoud@zalt.me>"
 #RUN mkdir -p /usr/local/etc/redis
 #COPY redis.conf /usr/local/etc/redis/redis.conf
 
-VOLUME /data
+# Volume set up in deployment
+# VOLUME /data
 
-EXPOSE 6379
+# https://stackoverflow.com/a/57565545/460885
+# The value of containerPort is a runtime equivalent 
+# of EXPOSE to expose a port that was not specified in the image. 
+# EXPOSE 6379
 
-#CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
+# Redis only used locally so no need for configuration
+# CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
 CMD ["redis-server"]
