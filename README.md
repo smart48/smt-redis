@@ -14,13 +14,26 @@ docker build . -t smart48/smt-redis
 This will build with the tag using our organization's name and name for the image. Make sure Docker is running or see something like Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 
 
+## Test
+
+You can test the build image using:
+
+```
+docker run --name smt-redis -d smart48/smt-redis:latest
+```
+And then you can check it using
+
+```
+docker exec -it smt-redis bash
+```
+
 ## Docker Tag
 
 
 To tag the latest stabele build you can use `docker tag <repo/image> <repo/image:version>`:
 
 ```
-docker tag smart48/smt-redis smart48/smt-redis:1.0
+docker tag smart48/smt-redis smart48/smt-redis:1.1
 ```
 
 You will on listing then see the newly added version:
@@ -35,7 +48,9 @@ smart48/smt-redis              <none>              599bf9755a53        4 months 
 
 You can test the build image using:
 
-`docker run --name smt-redis -d smart48/smt-redis:latest`
+```
+docker run --name smt-redis -d smart48/smt-redis:latest
+```
 
 To see if it is there we do a `docker ps |grep smt`
 
@@ -50,5 +65,5 @@ docker image push smart48/smt-redis
 or with chosen tag
 
 ```
-docker image push smart48/smt-redis:1.0
+docker image push smart48/smt-redis:1.1
 ```
