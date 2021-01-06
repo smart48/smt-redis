@@ -33,7 +33,7 @@ docker exec -it smt-redis bash
 To tag the latest stabele build you can use `docker tag <repo/image> <repo/image:version>`:
 
 ```
-docker tag smart48/smt-redis smart48/smt-redis:1.3
+docker tag smart48/smt-redis smart48/smt-redis:1.4
 ```
 
 You will on listing then see the newly added version:
@@ -65,5 +65,5 @@ docker image push smart48/smt-redis
 or with chosen tag
 
 ```
-docker image push smart48/smt-redis:1.3
+docker image push smart48/smt-redis:1.4
 ```
